@@ -267,11 +267,13 @@ nav {
     overflow: hidden;
     display: flex;
     visibility: hidden;
+    z-index: -1;
+    transition: visibility 1s; z-index: 1s, box-shadow 0.5s ease;
 }
 
 .modal--open .modal {
     z-index: 60;
-    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.45);
+    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);
     visibility: visible; 
 }
 
@@ -282,11 +284,17 @@ nav {
     flex-direction: column;
     justify-content: center;
     position: relative;
+    transition: all 300ms ease-in;
+}
+
+.modal--open .modal--about,
+.modal--open .modal--contact {
+    transform: translateX(0%);
 }
 
 .modal__about {
     background-color: rgb(245, 245, 245);
-    
+    transform: translateX(-110%);
 }
 
 .modal__languages {
@@ -327,6 +335,7 @@ nav {
 .modal__contact {
     background-color: #242424;
     color: white;
+    transform: translateX(110%);
 }
 
 .modal__title {
@@ -375,7 +384,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     z-index: -1;
@@ -384,7 +393,6 @@ nav {
 .modal__overlay--loading {
     background-color: blue;
     font-size: 80px;
-    z-index: -1;
 }
 
 .modal__overlay--success {
@@ -397,6 +405,7 @@ nav {
 
 .modal__overlay--visbile {
      z-index: 1;
+     display: flex;
 }
 
 .fa-spinner {

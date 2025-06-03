@@ -1,6 +1,6 @@
-// template_j8012nx
-// service_u6tg75i
-// blalLhMjwPmb7_1vu
+// 
+// 
+// 
 
 function contact(event) {
     event.preventDefault();
@@ -13,10 +13,12 @@ function contact(event) {
             'template_j8012nx',
             event.target,
             'user_blalLhMjwPmb7_1vu'
-        ).then(() => {            
+        )
+        .then(() => {            
             loading.classList.remove("modal__overlay--visible");
             success.classList += " modal__overlay--visible";
-        }).catch(() => {
+        })
+        .catch(() => {
             loading.classList.remove("modal__overlay--visible");
             alert(
                 "The email service is temporarily unavailable. Please contact me directly at Santiago.JS89@gmail.com."
@@ -26,9 +28,10 @@ function contact(event) {
 
 let isModalOpen = false;
 function toggleModal() {
-    isModalOpen = !isModalOpen;
-    if (isModalOpenmodalOpen) {
-        return document.body.classList.remove("modal--open")
+    if (isModalOpen) {
+        isModalOpen = false;
+        return document.body.classList.remove("modal--open");
     }
-    document.body.classList += " modal--open"
+    isModalOpen = true;
+    document.body.classList += " modal--open";
 }
