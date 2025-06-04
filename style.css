@@ -48,6 +48,22 @@ a {
     width: 100%;
 }
 
+nav, 
+.scroll, 
+.header {
+    opacity: 1;
+    visibility: visible;
+    transition: all 600ms;
+}
+
+.modal--open nav, 
+.modal--open .scroll, 
+.modal--open .header {
+    opacity: 0;
+    visibility: visible;
+    transition: all 400ms;
+}
+
 p {
     line-height: 1.5;
 }
@@ -126,6 +142,19 @@ label {
 
 .title--secondary, .color {
     color: rgb(11, 200, 217) !important;
+}
+
+.dark-theme .title,
+.dark-theme .section__title,
+.dark-theme .section__sub--title,
+.dark-theme .nav__link--anchor,
+.dark-theme .circle, 
+.dark-theme .header__para {
+    color: white;
+}
+
+.dark-theme section {
+    background-color: #242424;
 }
 
 
@@ -268,7 +297,7 @@ nav {
     display: flex;
     visibility: hidden;
     z-index: -1;
-    transition: visibility 1s; z-index: 1s, box-shadow 0.5s ease;
+    transition: visibility 1s, z-index 1s, box-shadow 0.5s ease;
 }
 
 .modal--open .modal {
