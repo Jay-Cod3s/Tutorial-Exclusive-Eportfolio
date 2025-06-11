@@ -21,26 +21,26 @@
     </script>
 </head>
 
-<body class=" modal--open" class=" dark-theme">
-    <section id="landing-page">
+<body>
+    <section id="landing-page" onmousemove="moveBackground(event)">
         <nav>
             <figure>
                 <img id="personal-logo" src="./assets/JSlogo2.png" alt="" />
             </figure>
             <ul class="nav__link--list">
-                <li class="nav__link">
+                <li class="nav__link" onclick="toggleModal()">
                     <a href="#" class="
                     nav__link--anchor 
                     link__hover-effect 
                     link__hover-effect--black">About</a>
                 </li>
                 <li class="nav__link">
-                    <a href="#" class="
+                    <a href="#projects" class="
                     nav__link--anchor 
                     link__hover-effect 
                     link__hover-effect--black">Projects</a>
                 </li>
-                <li class="nav__link">
+                <li class="nav__link" onclick="toggleModal()">
                     <a href="#" class="
                     nav__link--anchor 
                     link__hover-effect 
@@ -56,14 +56,14 @@
             </ul>
         </nav>
         <header class="header">
-            <div class="header_content">
+            <div class="header__content">
                 <h1 class="title">Hey</h1>
                 <h1 class="title title--secondary">I'm Jackie.</h1>
                 <p class="header__para">
                     I am a <b class="color">Frontend Software Engineer</b> with a strong
                     passion for building web applications with great user experiences.
                     <br />
-                    Here's a little more <b class="color click">about me.</b>
+                    Here's a little more <b class="color click" onclick="toggleModal()">about me.</b>
                 </p>
                 <div class="social__list">
                     <a href="https://www.linkedin.com/in/jackie-slivinski" target="_blank" class="social__link click">
@@ -78,9 +78,11 @@
                 </div>
             </div>
         </header>
-        <button class="mail__btn click" onclick="toggleModal()">
-            <i class="fa-solid fa-envelope"></i>
-        </button>
+        <a href="#">
+            <button class="mail__btn click" onclick="toggleModal()">
+                <i class="fa-solid fa-envelope"></i>
+            </button>
+        </a>
         <a href="#projects" class="scroll">
             <div class="scroll__icon click"></div>
         </a>
@@ -114,22 +116,22 @@
                 </div>
             </div>
             <div class="modal__half modal__contact">
-                <i class="fas fa-times modal__exit click"></i>
+                <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
                 <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
                 <h4 class="modal__sub-title modal__sub-title--contact">I am currently open to new opportunites. I would
                     love to discuss my abilities and strengths to contribute to your company.</h4>
                 <form id="contact__form" onsubmit="contact(event)">
                     <div class="form__item">
                         <label class="form__item--label">Name</label>
-                        <input class="input" name="user__name" type="text"></input>
+                        <input class="input" name="user__name" type="text" required></input>
                     </div>
                     <div class="form__item">
                         <label class="form__item--label">Email</label>
-                        <input class="input" name="user__email" type="email"></input>
+                        <input class="input" name="user__email" type="email" required></input>
                     </div>
                     <div class="form__item">
                         <label class="form__item--label">Message</label>
-                        <textarea class="input" name="message" type="text"></textarea>
+                        <textarea class="input" name="message" type="text" required></textarea>
                     </div>
                     <button id="contact__submit" class="form__submit">Send it my way</button>
                 </form>
@@ -139,9 +141,17 @@
                 <div class="modal__overlay modal__overlay--success">
                     Thanks for the message! Looking forward to speaking to you soon.
                 </div>
-            </div>
-            
+            </div>           
         </div>
+        <img src="./assets/semi circle.svg" class="shape shape--1">
+        <img src="./assets/circle.svg" class="shape shape--2">
+        <img src="./assets/squiggly.svg" class="shape shape--3">
+        <img src="./assets/circle.svg" class="shape shape--4">
+        <img src="./assets/triangle.svg" class="shape shape--5">
+        <img src="./assets/circle.svg" class="shape shape--6">
+        <img src="./assets/squiggly.svg" class="shape shape--7">
+        <img src="./assets/circle.svg" class="shape shape--8">
+        <img src="./assets/semi circle.svg" class="shape shape--9">
     </section>
 
     <section id="projects">
@@ -199,7 +209,7 @@
                         link__hover-effect--white">
                         LinkedIn
                     </a>
-                    <a href="#" class="
+                    <a href="#" onclick="toggleModal()" class="
                         footer__social--link
                         link__hover-effect
                         link__hover-effect--white">
